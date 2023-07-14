@@ -1,0 +1,66 @@
+/* .meals {
+    max-width: 60rem;
+    width: 90%;
+    margin: 2rem auto;
+    animation: meals-appear 1s ease-out forwards;
+  }
+  
+  .meals ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  @keyframes meals-appear {
+    from {
+      opacity: 0;
+      transform: translateY(3rem);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  } */
+
+  /* Default styles */
+.meals {
+  max-width: 60rem;
+  width: 90%;
+  margin: 2rem auto;
+  animation: meals-appear 1s ease-out forwards;
+}
+
+.meals ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes meals-appear {
+  from {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media queries for responsive styles */
+@media screen and (max-width: 768px) {
+  /* Styles for screens up to 768px wide */
+  .meals {
+    max-width: 45rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Styles for screens up to 480px wide */
+  .meals {
+    max-width: 35rem;
+    margin: 1rem auto;
+  }
+}

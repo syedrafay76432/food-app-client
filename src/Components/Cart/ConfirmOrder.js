@@ -3,6 +3,7 @@ import Modal from '../UI/Modal';
 import classes from './Cart.module.css'
 import Input from '../UI/Input';
 import CartContext from '../../store/cart-context'
+import axios from 'axios'
 
 const ConfirmOrder = (props) => {
     const cartCtx = useContext(CartContext);
@@ -27,21 +28,29 @@ const ConfirmOrder = (props) => {
             totalAmount: totalAmount,
             items: items
         }
+        axios.post("https://food-app-server-nine.vercel.app/submit",formData).then((data) => {
+                    console.log(data); // Success message from the server
+                })
+                .catch((error) => {
+                    console.error('An error occurred while submitting the form:', error);
+                });
 
-        fetch('https://food-app-server-nine.vercel.app/submit', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data); // Success message from the server
-            })
-            .catch((error) => {
-                console.error('An error occurred while submitting the form:', error);
-            });
+
+
+        // fetch('https://food-app-server-nine.vercel.app/submit', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify(formData),
+        // })
+        //     .then((response) => response.json())
+        //     .then((data) => {
+        //         console.log(data); // Success message from the server
+        //     })
+        //     .catch((error) => {
+        //         console.error('An error occurred while submitting the form:', error);
+        //     });
     }
     
     return (
